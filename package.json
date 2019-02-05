@@ -1,0 +1,9 @@
+{
+  "name": "@fjmillman/graphical-password-scheme",
+  "version": "1.0.0",
+  "description": "An over-the-shoulder-attack-resistant graphical password scheme for the world wide web",
+  "main": "index.js",
+  "repository": "https://github.com/fjmillman/graphical-password-scheme.git",
+  "author": "Freddie John Millman",
+  "license": "MIT"
+}

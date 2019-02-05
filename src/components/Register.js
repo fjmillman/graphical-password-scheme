@@ -1,7 +1,7 @@
 import Typography from '@material-ui/core/Typography';
 
-const Register = (props) => (
-    <Typography component={"p"} align={"center"} className={props.classes.text}>
+const Register = () => (
+    <Typography component={"p"} align={"center"}>
         Register here
     </Typography>
 );

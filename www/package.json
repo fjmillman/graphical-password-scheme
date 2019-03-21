@@ -1,0 +1,22 @@
+{
+  "main": "index.js",
+  "scripts": {
+    "start": "next",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fjmillman/graphical-password-scheme.git"
+  },
+  "author": "Freddie John Millman <freddie.millman@icloud.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@material-ui/core": "^3.9.0",
+    "@material-ui/icons": "^3.0.2",
+    "axios": "^0.18.0",
+    "graphical-password-scheme": "../",
+    "next": "^8.0.0-canary.18",
+    "react": "^16.6.3",
+    "react-dom": "^16.6.3"
+  }
+}

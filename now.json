@@ -1,0 +1,29 @@
+{
+  "version": 2,
+  "name": "graphical-password-scheme",
+  "builds": [
+    {
+      "src": "api/routes/index.js",
+      "use": "@now/node"
+    },
+    {
+      "src": "www/package.json",
+      "use": "@now/next"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "/api/routes"
+    },
+    {
+      "src": "^/(.*)$",
+      "dest": "/www/$1"
+    }
+  ],
+  "env": {
+    "MONGODB_USERNAME": "@mongodb-username",
+    "MONGODB_PASSWORD": "@mongodb-password"
+  },
+  "alias": ["graphical-password-scheme"]
+}

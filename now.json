@@ -7,7 +7,7 @@
       "use": "@now/node"
     },
     {
-      "src": "www/package.json",
+      "src": "app/package.json",
       "use": "@now/next"
     }
   ],
@@ -18,7 +18,7 @@
     },
     {
       "src": "^/(.*)$",
-      "dest": "/www/$1"
+      "dest": "/app/$1"
     }
   ],
   "env": {

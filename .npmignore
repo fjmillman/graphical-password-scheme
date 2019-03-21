@@ -1,7 +1,7 @@
 api/
 node_modules/
 src/
-www/
+app/
 .babelrc
 .gitignore
 .nowignore

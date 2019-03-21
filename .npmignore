@@ -8,3 +8,6 @@ app/
 now.json
 rollup.config.js
 yarn.lock
+.prettier.config.js
+.eslintrc.js
+.prettierignore

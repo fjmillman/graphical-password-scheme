@@ -1,8 +1,7 @@
 import React from 'react';
 import * as PropTypes from 'prop-types';
 import withStyles from '@material-ui/core/styles/withStyles';
-import Router from 'next/router';
-import { Login } from 'graphical-password-scheme';
+import Typography from '@material-ui/core/Typography';
 import NavigationBar from '../components/NavigationBar';
 
 const styles = theme => ({
@@ -20,23 +19,24 @@ const styles = theme => ({
     margin: theme.spacing.unit * 3,
     marginBottom: theme.spacing.unit * 5,
   },
+  text: {
+    margin: theme.spacing.unit * 3,
+  },
 });
 
-const LoginPage = ({ classes }) => {
-  const onSuccess = () => Router.push('/success');
+const SuccessPage = ({ classes }) => (
+  <div className={classes.layout}>
+    <NavigationBar />
+    <main className={classes.main}>
+      <Typography component="p" align="center" className={classes.text}>
+        Success! You logged in successfully!
+      </Typography>
+    </main>
+  </div>
+);
 
-  return (
-    <div className={classes.layout}>
-      <NavigationBar />
-      <main className={classes.main}>
-        <Login api="api/user" onSuccess={onSuccess} />
-      </main>
-    </div>
-  );
-};
-
-LoginPage.propTypes = {
+SuccessPage.propTypes = {
   classes: PropTypes.objectOf(PropTypes.string),
 };
 
-export default withStyles(styles)(LoginPage);
+export default withStyles(styles)(SuccessPage);

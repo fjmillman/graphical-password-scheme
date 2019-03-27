@@ -1,9 +1,9 @@
-const express = require("express");
-const body = require("body-parser");
-const cors = require("cors");
-const api = require("./routes");
+const express = require('express');
+const body = require('body-parser');
+const cors = require('cors');
+const api = require('./routes');
 
-require("now-env");
+require('now-env');
 
 const server = express();
 const port = 9999;

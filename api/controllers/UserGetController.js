@@ -1,13 +1,15 @@
-const User = require("../models/User");
-const connect = require("../db.js");
+const User = require('../models/User');
+const connect = require('../db.js');
 
-const UserGetController = (req, res) => {
-    connect();
+const UserGetController = async (req, res, next) => {
+  connect();
 
-    User.findOne({ username: req.body.username }, function (err, user) {
-        if (err) return console.error(err);
-        res.json(user);
-    });
+  try {
+    const user = await User.findOne({ username: req.query.username });
+    res.json(user);
+  } catch (err) {
+    next(err);
+  }
 };
 
 module.exports = UserGetController;

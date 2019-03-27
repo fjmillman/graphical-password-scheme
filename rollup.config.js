@@ -1,31 +1,32 @@
-import resolve from "rollup-plugin-node-resolve";
-import babel from "rollup-plugin-babel";
-import commonjs from "rollup-plugin-commonjs";
-import json from "rollup-plugin-json";
-import { terser } from "rollup-plugin-terser";
+import resolve from 'rollup-plugin-node-resolve';
+import babel from 'rollup-plugin-babel';
+import commonjs from 'rollup-plugin-commonjs';
+import pkg from './package.json';
 
-const config = {
-    input: "src/index.js",
-    external: ["react"],
-    output: {
-        format: "cjs",
-        name: "index",
-        globals: {
-            react: "React"
-        }
-    },
-    plugins: [
-        resolve({
-            browser: true
-        }),
-        babel({
-            exclude: "node_modules/**",
-        }),
-        commonjs({
-            include: "node_modules/**",
-        }),
-        json()
+export default [
+  {
+    input: 'src/index.js',
+    output: [
+      {
+        file: pkg.main,
+        format: 'es',
+        sourceMap: true,
+      },
     ],
-};
-
-export default config;
+    external: [
+      ...Object.keys(pkg.dependencies || {}),
+      ...Object.keys(pkg.peerDependencies || {}),
+    ],
+    plugins: [
+      babel({
+        exclude: 'node_modules/**',
+        externalHelpers: false,
+        runtimeHelpers: true,
+      }),
+      resolve({
+        preferBuiltins: true,
+      }),
+      commonjs(),
+    ],
+  },
+];

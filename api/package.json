@@ -14,9 +14,7 @@
     "body-parser": "^1.18.3",
     "cors": "^2.8.5",
     "express": "^4.16.4",
-    "mongoose": "^5.4.11"
-  },
-  "devDependencies": {
+    "mongoose": "^5.4.11",
     "now-env": "^3.1.0"
   }
 }
